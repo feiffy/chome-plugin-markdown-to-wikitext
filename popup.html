@@ -7,10 +7,14 @@
 </head>
 <body>
   <h1>Markdown to Wikitext</h1>
-  <textarea id="markdown-input" placeholder="Enter Markdown text here..."></textarea>
-  <button id="convert-button">convert</button>
-  <textarea id="wikitext-output" readonly placeholder="Wikitext will appear here..."></textarea>
-  <button id="copy-button">copy</button>
+  <div class="textarea-group">
+    <textarea id="markdown-input" placeholder="Enter Markdown text here..."></textarea>
+    <button id="convert-button">convert</button>
+  </div>
+  <div class="textarea-group">
+    <textarea id="wikitext-output" readonly placeholder="Wikitext will appear here..."></textarea>
+    <button id="copy-button">copy</button>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>

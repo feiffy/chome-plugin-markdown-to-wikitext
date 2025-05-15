@@ -2,30 +2,61 @@ body {
     font-family: Arial, sans-serif;
     padding: 10px;
     width: 600px;
-  }
-  
-  h1 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  textarea {
+    height: 550px;
+}
+
+h1 {
+    font-size: 16px;  /* 从18px缩小 */
+    margin-bottom: 8px;  /* 从10px缩减 */
+}
+
+textarea {
     width: 100%;
-    height: 300px;
     margin-bottom: 10px;
     padding: 5px;
     font-family: monospace;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
+}
+
+button {
+    width: 80px;  /* 从100%调整为固定宽度 */
+    margin-left: 10px; /* 添加按钮间距 */
+    padding: 8px; /* 微调内边距 */
+    height: 100%; /* 垂直填充容器高度 */
+}
+
+/* 新增容器样式 */
+.textarea-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;  /* 从10px增加到15px */
+    height: 220px;
+}
+
+.textarea-group:last-of-type {
+    height: 240px;
+}
+
+textarea {
+    width: calc(100% - 90px);
+    height: 100% !important;
+    margin-bottom: 0;
+    resize: none;
+}
+
+button {
+    width: 70px;  /* 从80px缩小 */
+    height: 50px;  /* 固定高度 */
+    padding: 6px;  /* 减小内边距 */
+    align-self: center;  /* 垂直居中 */
+    background-color: #4CAF50; /* 恢复原色 */
+    color: aliceblue;
+    border-width: 1px;
+}
+
+/* 调整输入框宽度计算 */
+textarea {
+    width: calc(100% - 80px);  /* 按钮宽度70px + 间距10px */
+    height: 100% !important;
+    margin-bottom: 0;
+    resize: none;
+}

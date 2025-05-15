@@ -15,7 +15,7 @@ A browser extension that converts Markdown syntax to Wikitext format
 
 ## Development Guide
 ```bash
-git clone [Your Repository URL]
+git clone https://github.com/your-username/chome-plugin-markdown-to-wikitext.git
 cd chome-plugin-markdown-to-wikitext
 # Start test server
 python3 -m http.server 8000

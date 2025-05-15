@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
         tokens.forEach(token => {
           if (token.type === 'heading_open') {
-            output += '\n' + '='.repeat(parseInt(token.tag.slice(1)) + 1) + ' ';
+            const hasNewline = output.endsWith('\n');
+            output += (hasNewline ? '\n' : '\n\n') + '='.repeat(parseInt(token.tag.slice(1)) + 1) + ' ';
           } else if (token.type === 'heading_close') {
             output = output.trimEnd() + ' ' + '='.repeat(parseInt(token.tag.slice(1)) + 1) + '\n\n';
           } else if (token.type === 'inline') {
@@ -37,7 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
             output += '|';
           } else if (token.type === 'fence') {
             const lang = token.info.trim() || '';
-            output += `\n<syntaxhighlight lang="${lang}">\n${token.content}\n</syntaxhighlight>\n`;
+            const hasPrecedingNewline = output.endsWith('\n');
+            output += (hasPrecedingNewline ? '' : '\n') + `\n<syntaxhighlight lang="${lang}">\n${token.content}\n</syntaxhighlight>\n\n`;
           }
         });
         return output.trim();
